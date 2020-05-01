@@ -72,7 +72,7 @@ def get_model(point_cloud, is_training, bn_decay=None):
     return net, end_points
 
 
-def get_loss(pred, label, end_points, reg_weight=0.001):
+def get_loss(pred, label, end_points, reg_weight=0.001):  #损失函数还需要进一步理解
     """ pred: B*NUM_CLASSES,
         label: B, """
     loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=pred, labels=label)
